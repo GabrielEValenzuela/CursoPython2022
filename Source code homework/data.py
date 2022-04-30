@@ -31,7 +31,7 @@ LOCALIDADES = [
     "Villa Luro"
 ]
 
-#Añadir mas localidades
+#Añadir mas localidades para la próxima clase
 
 def obtenerDatos():
     datos = []

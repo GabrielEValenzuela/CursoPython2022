@@ -34,10 +34,12 @@ LOCALIDADES = [
 #Añadir mas localidades
 
 def obtenerDatos():
-    datos = {}
+    datos = []
     for i in range(MAX_ENVIOS):
-        datos['cod']        = i
-        datos['org']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
-        datos['dst']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
-        datos['entregado']  = rd.randint(0,1)
+        dato = {}
+        dato['cod']        = i
+        dato['org']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
+        dato['dst']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
+        dato['entregado']  = rd.randint(0,1)
+        datos.append(dato)
     return datos

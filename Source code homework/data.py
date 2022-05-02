@@ -1,6 +1,7 @@
 import random as rd
 
-MAX_ENVIOS = 2**32-1
+MAX_ENVIOS = 2**10-1 #Descomentar y comentar el siguiente para produccion
+#MAX_ENVIOS = 2**32-1
 LOCALIDADES = [
     "Barrio Alberdi",
     "Barrio Bajada San Roque",
@@ -38,8 +39,8 @@ def obtenerDatos():
     for i in range(MAX_ENVIOS):
         dato = {}
         dato['cod']        = i
-        dato['org']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
-        dato['dst']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES))]
+        dato['org']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES)-1)]
+        dato['dst']        = LOCALIDADES[rd.randint(0,len(LOCALIDADES)-1)]
         dato['entregado']  = rd.randint(0,1)
         datos.append(dato)
     return datos

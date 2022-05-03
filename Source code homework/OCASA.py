@@ -42,11 +42,21 @@ for fichas_de_envio in d.obtenerDatos()  :
 # lista de destinos
 DESTINO=[]
 for barrios in d.obtenerDatos():
-    destinos= d.obtenerDatos['dst']
-    DESTINO.extend(destinos['dst'])
+    destinos= barrios['dst']
+    DESTINO.extend(destinos)
 
+    
+#tasas de entregas y no entregas
 I=0 
 while(I<len(d.LOCALIDADES)): 
     for barrios in d.LOCALIDADES: 
-        cantidad_de_entregas_total=
+        cantidad_de_entregas_total= DESTINO.count(barrios)
+        entrega= destino_entregado.count(barrios)
+        no_entrega= destino_no_entregado.count(barrios)
+        tasa_de_entrega= entrega*100/ cantidad_de_entregas_total
+        tasa_de_no_entregados = no_entrega*100 / cantidad_de_entregas_total
+        i=i+1
+
+        print ("La tasa de envios entregados de ", barrios , "es de: {:.2f} %" .format(tasa_de_entrega))
+        print ("La tasa de envios no entregados de ", barrios , "es de: {:.2f} %" .format(tasa_de_no_entregados))
 

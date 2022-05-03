@@ -12,7 +12,8 @@
     
 
 #Descomentar para probar
-import random 
+import random
+from re import I 
 import data as d
 #print(d.obtenerDatos())
 
@@ -37,3 +38,15 @@ for fichas_de_envio in d.obtenerDatos()  :
         destino_no_entregado.append( fichas_de_envio ['dst'])
 # print (destino_entregado)
 # print (destino_no_entregado)
+
+# lista de destinos
+DESTINO=[]
+for barrios in d.obtenerDatos():
+    destinos= d.obtenerDatos['dst']
+    DESTINO.extend(destinos['dst'])
+
+I=0 
+while(I<len(d.LOCALIDADES)): 
+    for barrios in d.LOCALIDADES: 
+        cantidad_de_entregas_total=
+

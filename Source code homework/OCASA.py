@@ -7,6 +7,8 @@
     #franferr02
     #francovega
     #lucksJa
+    #RoBengio
+    
 
 #Descomentar para probar
 import random 

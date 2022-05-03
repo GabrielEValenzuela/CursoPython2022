@@ -51,11 +51,11 @@ print("TASAS DE ENTREGA POR BARRIO")
 I=0 
 while(I<len(d.LOCALIDADES)): 
     for barrios in d.LOCALIDADES: 
-        cantidad_de_entregas_total= DESTINO.count(barrios)
+        cantidad_de_entregas_y_no_entregas_totales= DESTINO.count(barrios)
         entrega= destino_entregado.count(barrios)
         no_entrega= destino_no_entregado.count(barrios)
-        tasa_de_entrega= entrega*100/ cantidad_de_entregas_total
-        tasa_de_no_entregados = no_entrega*100 / cantidad_de_entregas_total
+        tasa_de_entrega= entrega*100/ cantidad_de_entregas_y_no_entregas_totales
+        tasa_de_no_entregados = no_entrega*100 / cantidad_de_entregas_y_no_entregas_totales
         I=I+1
 
         print ("La tasa de envios entregados de ", barrios , "es de: {:.2f} %" .format(tasa_de_entrega))

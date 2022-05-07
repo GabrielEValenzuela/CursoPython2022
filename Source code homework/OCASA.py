@@ -61,4 +61,25 @@ while(I<len(d.LOCALIDADES)):
 
         print ("La tasa de envios entregados de ", barrios , "es de: {:.2f} %" .format(tasa_de_entrega))
         print ("La tasa de envios no entregados de ", barrios , "es de: {:.2f} %" .format(tasa_de_no_entregados))
+        
+#Mayor cantidad de envios y de recibidos
+#ciudades origen
+origen=[]
+for emisores in d.obtenerDatos():
+    ciudades=emisores ['org']
+    origen.append(ciudades)
+
+nombre_ciudades=list(set(origen)) #Lo que hago es pasarlo a un conjunto, de forma que solamente tenga las nombres no repetidas
+# y la cantidad de ciudades distintas. Luego lo paso a lista para poder leerlos
+j=0
+envios_por_ciudades=[] #aquí voy a guardar la cantidad de envios que vaya contando por ORDEN de aparicion en la lista anterior
+while j<len(nombre_ciudades):
+    cantidad_envios_ciudad_j=origen.count(nombre_ciudades[j])
+    envios_por_ciudades.append(cantidad_envios_ciudad_j) # almaceno la cantidad de envios de una ciudad en la posicion j
+    j=j+1
+
+maximos_envios=nombre_ciudades[envios_por_ciudades.index(max(envios_por_ciudades))] 
+#en el bloque anterior, lo que hago es sacar el valor maximo de la lista envios_por_ciudades, luego obtengo la posicion de 
+#dicho valor para luego ir a la misma posicion en nombre_ciudades y atribuirle el nombre a la variable maximos_envios
+print ('La mayor cantidad de envios se realizan en: ', maximos_envios)
 

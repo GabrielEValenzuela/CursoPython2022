@@ -23,7 +23,6 @@ longitud = 8
 valores = "0123456789"
 aux = ""
 for codigo in d.obtenerDatos():
-    longitud = 8
     valores = "0123456789"
     aux = ""
     aux = aux.join([random.choice(valores) for i in range(longitud)])

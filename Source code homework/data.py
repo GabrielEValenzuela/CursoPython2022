@@ -1,6 +1,6 @@
 import random as rd
 
-MAX_ENVIOS = 2**10-1 #Descomentar y comentar el siguiente para produccion
+MAX_ENVIOS = 2**8-1 #Descomentar y comentar el siguiente para produccion
 #MAX_ENVIOS = 2**32-1
 LOCALIDADES = [
     "Barrio Alberdi",

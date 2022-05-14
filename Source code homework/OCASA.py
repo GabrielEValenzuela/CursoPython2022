@@ -82,5 +82,5 @@ maximos_envios=nombre_ciudades[envios_por_ciudades.index(max(envios_por_ciudades
 #dicho valor para luego ir a la misma posicion en nombre_ciudades y atribuirle el nombre a la variable maximos_envios
 print ('La mayor cantidad de envios se realizan en: ', maximos_envios)
 #Intente hacer la maxima de entregas pero nose cual es mi error
-maximo_de_entregas=destino_entregado[entrega.index(max(entrega))]
-print ("La mayor cantidad de entregas se realiza en: ", maximo_de_entregas)
+#maximo_de_entregas=destino_entregado[entrega.index(max(entrega))]
+#print ("La mayor cantidad de entregas se realiza en: ", maximo_de_entregas)

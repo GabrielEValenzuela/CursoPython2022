@@ -48,7 +48,11 @@ def clasificarEntregas(dicEnvios):
 
 def calcularTasaEntregas(dicEntregas):
     """
-        @ToDo Documentar
+        Tasa de entregas 
+        Params
+        ------
+        dicEntregas, porcentaje 
+        Diccionario con las tasas de entrega para cada barrio 
     """
     for envio in dicEntregas:
         tasaEntrega = dicEntregas[envio]["entregados"]/(dicEntregas[envio]["entregados"]+dicEntregas[envio]["no_entregados"])

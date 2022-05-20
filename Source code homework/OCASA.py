@@ -28,7 +28,11 @@ def generarUUID(dicEnvios):
 #Clasificacion de entregas
 def clasificarEntregas(dicEnvios):
     """
-        @ToDo Documentar
+       Clasificacion de Entregas
+       Params
+       ------
+       dicEntregas, conditional
+       Diccionario con los datos de las entregas
     """
     dicEntregas   = {}
     for envio in dicEnvios:

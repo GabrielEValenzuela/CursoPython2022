@@ -28,7 +28,11 @@ def generarUUID(dicEnvios):
 #Clasificacion de entregas
 def clasificarEntregas(dicEnvios):
     """
-        @ToDo Documentar
+       Clasificacion de Entregas
+       Params
+       ------
+       dicEntregas, conditional
+       Diccionario con los datos de las entregas
     """
     dicEntregas   = {}
     for envio in dicEnvios:
@@ -44,7 +48,11 @@ def clasificarEntregas(dicEnvios):
 
 def calcularTasaEntregas(dicEntregas):
     """
-        @ToDo Documentar
+        Tasa de entregas 
+        Params
+        ------
+        dicEntregas, porcentaje 
+        Diccionario con las tasas de entrega para cada barrio 
     """
     for envio in dicEntregas:
         tasaEntrega = dicEntregas[envio]["entregados"]/(dicEntregas[envio]["entregados"]+dicEntregas[envio]["no_entregados"])
@@ -52,31 +60,30 @@ def calcularTasaEntregas(dicEntregas):
 
 #Mayor cantidad de envios y de recibidos
 #ciudades origen
-def maxEnvios(dicEnvios):
+def maxEnvios(dicEntregas):
     """
         @ToDo Documentar
     """
-    #origen=[]
-    #for emisores in d.obtenerDatos():  
-    #ciudades=emisores ['org']
-    #origen.append(ciudades)
-    #nombre_ciudades=list(set(origen)) #Lo que hago es pasarlo a un conjunto, de forma que solamente tenga las nombres no repetidas
-    # y la cantidad de ciudades distintas. Luego lo paso a lista para poder leerlos
-    #j=0
-    #envios_por_ciudades=[] #aquí voy a guardar la cantidad de envios que vaya contando por ORDEN de aparicion en la lista anterior
-    #while j<len(nombre_ciudades):
-        #cantidad_envios_ciudad_j=origen.count(nombre_ciudades[j])
-        #envios_por_ciudades.append(cantidad_envios_ciudad_j) # almaceno la cantidad de envios de una ciudad en la posicion j
-        #j=j+1
+    maximo=-1
+    localidad=''
+    for envios in dicEntregas:
+        if dicEntregas[envios]['entregados']>maximo:
+            maximo=dicEntregas[envios]['entregados']
+            localidad=envios
+    return localidad,maximo
 
-    #maximos_envios=nombre_ciudades[envios_por_ciudades.index(max(envios_por_ciudades))] 
-    #en el bloque anterior, lo que hago es sacar el valor maximo de la lista envios_por_ciudades, luego obtengo la posicion de 
-    #dicho valor para luego ir a la misma posicion en nombre_ciudades y atribuirle el nombre a la variable maximos_envios
-    #print ('La mayor cantidad de envios se realizan en: ', maximos_envios)
-    #Intente hacer la maxima de entregas pero nose cual es mi error
-    #maximo_de_entregas=destino_entregado[entrega.index(max(entrega))]
-    #print ("La mayor cantidad de entregas se realiza en: ", maximo_de_entregas)
-    pass
+def maxEnviosNoentregados(dicEntregas):
+    """
+        @ToDo Documentar
+    """
+    maximo=-1
+    localidad=''
+    for envios in dicEntregas:
+        if dicEntregas[envios]['no_entregados']>maximo:
+            maximo=dicEntregas[envios]['no_entregados']
+            localidad=envios
+    return localidad,maximo
+
 
 def main():
     datos = d.obtenerDatos()
@@ -86,6 +93,21 @@ def main():
     print('Funcion de clasificar')
     entregas = clasificarEntregas(datos)
     print(entregas)
+    print('La localidad con maximos envios entregados es: ',maxEnvios(entregas))
+    print('La localidad con maximos envios no entregados es: ',maxEnviosNoentregados(entregas))
+
+
+def ObtenerEnvios(Codigo_envios,lista_de_envios):
+    for envios in lista_de_envios:
+        if Codigo_envios==envios['cod']:
+            return envios
+
+
+
+
+
+
 
 if __name__ == "__main__":
     main()
+
